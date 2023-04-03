@@ -1,0 +1,25 @@
+extends layout
+block content
+    div.container
+        .medicine-container
+            h1.medicine-title #{medicine.name}
+            .medicine-details
+                .medicine-field
+                    span.field-label Description:
+                    span.field-value #{medicine.description}
+                .medicine-field
+                    span.field-label Count:
+                    span.field-value #{medicine.count}
+                .medicine-field
+                    span.field-label In Archive:
+                    span.field-value #{medicine.delete? "Yes" : "No"}
+                .medicine-field
+                    span.field-label In Top:
+                    span.field-value #{medicine.top ? "Yes" : "No"}
+                .medicine-field
+                    span.field-label Created At:
+                    span.field-value #{new Date(medicine.createdAt).toISOString().substring(0,16).replace('T',' ')}
+                .medicine-buttons
+                    form(action=`/medicine/delete/${medicine.id}`, method='post')
+                        button.button-delete(type='submit') Delete
+                    a.button-update(href=`/edit/${medicine.id}`) Update

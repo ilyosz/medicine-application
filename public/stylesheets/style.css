@@ -1,0 +1,297 @@
+:root{
+  font-size: 18px;
+  color: #444;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dotted #ccc;
+  padding: 10px;
+}
+.nav a {
+  display: inline-block;
+  padding: 5px 10px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: tomato;
+}
+
+
+/*HOMEPAGE STYLES*/
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.intro-msg {
+  padding: 100px 0 30px 0;
+  font-size: 2rem;
+  max-width: 60%;
+}
+.medicine {
+  display: inline-block;
+  width: 28%;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.medicine h2 {
+  margin-top: 0;
+}
+
+.medicine p {
+  margin-bottom: 0.5rem;
+}
+
+.go-to-medicine {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.go-to-medicine:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.go-to-medicine:active {
+  background-color: #005cbf;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filter-button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #e0e0e0;
+}
+
+.filter-button.active {
+  background-color: #90ee90;
+  color: #fff;
+}
+
+.medicines-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.medicine {
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #000;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+}
+
+.medicine h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.medicine p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.go-to-medicine {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.go-to-medicine:hover {
+  background-color: #83e757;
+}
+
+.go-to-medicine:focus {
+  outline: none;
+}
+
+.go-to-medicine:active {
+  background-color: #e0e0e0;
+}
+
+/*DETAIL MEDICINE STYLES*/
+.medicine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.medicine-title {
+  margin: 0;
+  text-align: center;
+}
+
+.medicine-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.medicine-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.field-label {
+  font-weight: bold;
+}
+
+.field-value {
+  flex: 1;
+}
+
+.medicine-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-delete, .button-update {
+  border: 1px solid black;
+  background-color: transparent;
+  color: black;
+  padding: 5px 10px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-delete:hover, .button-update:hover {
+  background-color: black;
+  color: white;
+}
+
+/*Create or update page*/
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn:focus, .btn.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}

@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Medicine app
+    link(rel='stylesheet', href='/static/stylesheets/style.css')
+  body
+    header.navbar
+       h1
+        a(href='/') Medicine app
+       nav.nav
+        a(href='/medicine?showArchived=false') All medicines
+        a(href='/create') Create new medicine
+    block content

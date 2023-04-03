@@ -1,0 +1,50 @@
+extends layout.pug
+block content
+    div.container
+        if error
+            h1 #{errorMessage}
+
+        if medicine == null
+            h1 Create medicine
+            form.form(action="/create" method='POST')
+                div.form-group
+                    label(for='name') Name:
+                    input.form-control(type='text' id='name' name='name' )
+                div.form-group
+                    label(for='description') Description:
+                    textarea.form-control(type='text' id='description' name='description')
+                div.form-group
+                    label(for='count') Count:
+                    input.form-control(type='number' id='count' value=1 name='count' )
+                div.form-group
+                    div.checkbox-group
+                        input.form-check-input(type='checkbox' id='Archive' name='archive' )
+                        label(for='Archive') Should be archived ?
+                div.form-group
+                    div.checkbox-group
+                        input.form-check-input(type='checkbox' id='Top' name='top' )
+                        label(for='Top') Should be in top ?
+                div.form-group
+                    button.btn(type='submit') Create medicine
+        else
+            h1 Update medicine
+            form.form(action=`/edit/${medicine.id}` method='POST')
+                div.form-group
+                    label(for='name') Name:
+                    input.form-control(type='text' id='name' value=`${medicine.name}` name='name' )
+                div.form-group
+                    label(for='description') Description:
+                    textarea.form-control(type='textarea' id='description'  name='description') #{medicine.description}
+                div.form-group
+                    label(for='count') Count:
+                    input.form-control(type='number' min=1  id='count' value=`${medicine.count}`  name='count' )
+                div.form-group
+                    div.checkbox-group
+                        input.form-check-input(type='checkbox' id='Archive' checked=medicine.delete name='archive' )
+                        label(for='Archive') Should be archived ?
+                div.form-group
+                    div.checkbox-group
+                        input.form-check-input(type='checkbox' id='Top' checked=medicine.top name='top' )
+                        label(for='Top') Should be in top ?
+                div.form-group
+                    button.btn(type='submit') Update medicine

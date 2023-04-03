@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div.container
+    h1.intro-msg Top medicines
+    div.medicine-list
+      each medicine in medicines
+          div.medicine
+              //a.note(href=`/medicine/${medicine.id}`)
+              h3.medicine-name #{medicine.name}
+              p.medicine-descripion #{medicine.description}
+              a.go-to-medicine(href=`/medicine/${medicine.id}`) Go to Medicine
+    p.intro-msg This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service.
+
+

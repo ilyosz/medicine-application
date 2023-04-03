@@ -1,0 +1,16 @@
+extends layout.pug
+block content
+    div.container
+        h1  #{archive===true?"Archived":"Active"} medicines
+
+        .filter-buttons
+            a.filter-button(href='/medicine?showArchived=false') All
+            a.filter-button(href='/medicine?showArchived=true') Archived
+        .medicines-container
+            each medicine in medicines
+                .medicine
+                    h2 #{medicine.name}
+                    p  #{medicine.description}
+                    a.go-to-medicine(href=`/medicine/${medicine.id}`) Go to Medicine
+
+

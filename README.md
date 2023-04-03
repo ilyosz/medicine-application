@@ -25,3 +25,6 @@ node app
 
 ### Web app repository on GitHub
 [link to github repository](https://github.com/ilyosz/medicine-application.git)
+
+### Web app on Glitch
+[link to web app on Glitch](https://four-cactus-frost.glitch.me/)
